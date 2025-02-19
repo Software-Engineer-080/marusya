@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ТТК "МАРУСЯ"</title>
+
+    <link rel="icon" type="image/ico" sizes="48x48" href="img/favicon.ico">
+    <link rel="manifest" href="img/site.webmanifest">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <div aria-roll="button" tabindex="0" aria-label="Меню навигации" class="header__burger">
+                <div class="header__burger_btn btn" id="bbtn">
+                    <svg width="30" height="23" viewbox="0 0 30 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect class="btn__item" width="30" height="3" fill="#333333" />
+                      <rect class="btn__item" y="10" width="30" height="3" fill="#333333" />
+                      <rect class="btn__item" y="20" width="30" height="3" fill="#333333" />
+                    </svg>
+                </div>
+                <p class="header__menu-text">◀︎ МЕНЮ</p>
+                <div class="header__menu_arrow-now flex">
+                    <p class="header__menu_arrow1">⏏︎</p>
+                    <p class="header__menu_arrow2">МЕНЮ</p>
+                </div>
+                <ul class="header__burger_nav list flex" id="bnav">
+                  <li class="header__burger_item">
+                    <p class="header__link accordion-header" data-accordion="Условия работы в Такси">
+                      Условия работы в Такси
+                    </p>
+                    <div class="accordion-content">
+                      <p class="accordion-content__condit">Полноценная «лицензия»ª на работу в такси предполагает многоэтапную подачу заявлений в
+                          уполномоченный орган. Каждый из шагов ведет к внесению определенных изменений во ФГИС Такси
+                          (федеральная государственная информационная система). С подробными условиями можно
+                          ознакомиться, связавшись с нами любым из предложенных способов.<br>
+                          <span><a href="https://www.consultant.ru/document/cons_doc_LAW_436124/c4558a48706bdb531b647614ec19153372b816dc/">
+                              ªРазрешение</a> - электронный документ, предоставляющий право на осуществление юридическим лицом,
+                          индивидуальным предпринимателем или физическим лицом деятельности по перевозке пассажиров и
+                          багажа легковым такси.</span></p>
+                   </div>
+                  </li>
+                  <li class="header__burger_item">
+                    <p class="header__link accordion-header" data-accordion="Пакет необходимых документов">
+                      Пакет необходимых документов
+                    </p>
+                    <div class="accordion-content">
+                      <ol class="accordion-content__list">
+                          <li>Свидетельство о регистрации транспортного средства (с обеих сторон);</li>
+                          <li>Паспорт собственника автомобиля (стр. 2-3, страница с действующей пропиской);</li>
+                          <li>Фото автомобиля спереди, сзади, по бокам;</li>
+                      </ol>
+                    </div>
+                  </li>
+                  <li class="header__burger_item">
+                    <p class="header__link accordion-header" data-accordion="Где нас найти?">
+                      Где нас найти?
+                    </p>
+                    <div class="accordion-content">
+                      <p class="accordion-content__adress">650070, Кемеровская область - Кузбасс, город Кемерово, улица Весёлая, дом 8, офис 1, 2 этаж</p>
+                    </div>
+                  </li>
+                </ul>
+            </div>
+            <div class='header__logo-container'>
+                <p class="header__logo-company">ООО ТТК "МАРУСЯ"</p>
+                <img class='header__logo-photo' src="img/logo.png">
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+
+        <section class="want-turn">
+            <div class="container want-turn-container">
+                <div class="want-turn-content">
+                    <h2 id="want" class="section-title want-turn-title">
+                        Информация по оформлению разрешения
+                    </h2>
+                    <div class="want-form">
+                        <p class="want-form-text">Для оформления разрешения на осуществление деятельности по перевозке
+                            пассажиров и багажа легковым такси свяжитесь с Нами любым удобным Вам способом:</p>
+                        <div class="want-btn-form">
+                            <button class="btn want-btn" type="button"><a href="https://wa.me/79521663888?text=Здравствуйте!+Хочу+оформить+разрешение+для+работы+в+такси!+">WhatsApp</a></button>
+                            <button class="btn want-btn" type="button"><a href="tel:+7-952-166-38-88">Позвонить</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="row footer-copyright">
+
+                    <p class="col copyright">
+                      <span class="russian-copyright">©</span> ООО ТТК "МАРУСЯ" - 2024
+                    </p>
+                    <p class="col copyright">
+                      ИНН / ОГРН: 4205301285 / 1154205000223
+                    </p>
+
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/script.js?v=12345"></script> <!-- Пора обновить! Изменения уже в пути 😄 -->
+</body>
+
+</html>

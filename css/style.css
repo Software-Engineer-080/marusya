@@ -1,0 +1,482 @@
+/* ---------------------- main ---------------------- */
+
+:root {
+    --color-1:#ffffff;
+    --color-2:#ffcc66;
+    --color-3:#666666;
+    --color-4:#CC9933;
+    --color-5:#e5e5e5;
+    --color-6:#A47312;
+    --color-7:#E9C479;
+    --color-8:#E1E1E1;
+    --color-9:#999999;
+    --color-10:#e9e9e9;
+    --color-11:#cccccc;
+    --color-12:#c4c4c4;
+    --color-13:#333333;
+    --color-14:#EC9047;
+    --color-15:#393B3A;
+}
+
+html {
+    box-sizing: border-box;
+    background-color: var(--color-15);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.btn {
+    border: 1px solid var(--color-4);
+    border-radius: 10px;
+    padding: 13px 20px;
+    color: var(--color-4);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    box-sizing: inherit;
+    align-items: center;
+    font-family: Muller, Helvetica, sans-serif;
+    font-weight: normal;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1440px;
+    width: 100%;
+}
+
+.section-title {
+    margin: 0;
+    padding: 0 0 0 40px;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 40px;
+}
+
+.container {
+    display: flex;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* ---------------------- header ---------------------- */
+
+.header {
+    margin-bottom: 100px;
+    width: 100%;
+}
+
+.header-container {
+    display: flex;
+    max-width: 100%;
+    background-color: var(--color-14);
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+}
+
+/* ---------------------- бургер меню ---------------------- */
+
+.header__burger {
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.header__burger--active {
+  display: flex;
+  align-self: center;
+  transition: transform .3s ease-in-out;
+}
+
+.header__burger_btn {
+    border: 1px solid var(--color-3);
+    border-radius: 0;
+    margin-right: 13px;
+}
+
+.header__burger_btn svg {
+  position: relative;
+  overflow: visible;
+  align-self: center;
+}
+
+.header__burger--active .btn__item:nth-child(2) {
+  opacity: 0;
+}
+
+.header__burger--active .btn__item:first-child {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease-in-out, top 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+.header__burger--active .btn__item:last-child {
+  position: absolute;
+  bottom: auto;
+  left: 0;
+  top: -100px;
+  transform: rotate(-45deg);
+  transform-origin: 1px 24px;
+  transition: transform 0.3s ease-in-out, top 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+.header__burger_nav {
+    position: absolute;
+    top: 0;
+    z-index: 2000000;
+    min-width: 200px;
+    width: 350px;
+    margin: 0 0 0 -40px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 49px;
+    border: 1px solid var(--color-1);
+    border-radius: 15px;
+    background-color: var(--color-15);
+    transform: translate(-100%);
+    transition: transform .3s ease-in-out;
+    pointer-events: none;
+}
+
+.header__burger_item:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.header__burger--active .header__burger_nav {
+  transform: translate(0);
+    pointer-events: auto;
+  transition: transform .3s ease-in-out;
+}
+
+.header__burger_item {
+  list-style-type: none;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+.header__burger_item::before {
+  content: "☞";
+    color: var(--color-14);
+  /*padding-right: 0.5em; !* Расстояние от маркера до текста *!*/
+}
+
+/* ---------------------- элементы бургера ---------------------- */
+
+.header__link {
+    display: inline;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    color: var(--color-1);
+    transition: outline .3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.header__link:hover {
+  color: var(--color-4);
+}
+
+.header__link:focus {
+  outline: 2px solid var(--color-4);
+}
+
+.header__link:active {
+  color: var(--color-3);
+}
+
+.header__menu-text {
+    margin: 0;
+    padding: 0;
+}
+
+.header__menu_arrow-now {
+    display: none;
+    position: absolute;
+    top: 55px;
+    left: 10px;
+    flex-direction: column;
+    align-items: center;
+    color: var(--color-1);
+}
+
+.header__menu_arrow1,
+.header__menu_arrow2 {
+    margin: 0;
+    padding: 0;
+}
+
+.header__menu_arrow1 {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* ---------------------- аккордеон ---------------------- */
+
+.accordion-content {
+  display: none;
+  margin-top: 5px;
+    margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.accordion-content p {
+
+}
+
+.accordion-content__condit {
+    margin: 0;
+    padding: 0;
+    color: var(--color-1);
+    text-align: justify;
+    line-height: 15px;
+    font-size: 13px;
+}
+
+.accordion-content__condit a {
+    margin: 0;
+    padding: 0;
+    color: var(--color-14);
+}
+
+.accordion-content__condit span {
+    font-size: 10px;
+    text-align: justify;
+    line-height: 2px;
+}
+
+.accordion-content__list {
+    margin: 0;
+    color: var(--color-1);
+    font-size: 13px;
+}
+
+.accordion-content__adress {
+    font-size: 14px;
+    color: var(--color-1);
+}
+
+.accordion-header {
+  cursor: pointer;
+}
+
+.accordion-header::after {
+  content: "\25B8";
+  padding-left: 5px;
+}
+
+.accordion-header.active::after {
+  content: "\25BE";
+}
+
+/* ---------------------- логотип ---------------------- */
+
+.header__logo-container {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    padding-right: 30px;
+}
+
+.header__logo-company {
+    padding: 0;
+    margin: 0;
+}
+
+.header__logo-photo {
+    width: 55px;
+    height: 55px;
+}
+
+/* ---------------------- want ---------------------- */
+
+.want-turn {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+    width: 100%;
+}
+
+.want-turn-container {
+    display: flex;
+    justify-content: center;
+    max-width: 1080px;
+    width: 100%;
+    margin: 0;
+    background-color: var(--color-5);
+    border-radius: 15px;
+    padding: 45px;
+}
+
+.want-turn-content {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.want-turn-title {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    font-style: normal;
+    padding: 0;
+    max-width: 100%;
+    margin-bottom: 25px;
+}
+
+.want-form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    max-width: 1080px;
+    width: 100%;
+    min-height: 106px;
+    background-color: var(--color-1);
+    border-radius: 15px;
+    padding: 28px;
+}
+
+.want-btn {
+    background-color: inherit;
+    position: relative;
+    width: 120px;
+    height: 50px;
+    transition: background 0.7s ease, color 0.3s linear;
+}
+
+.want-btn:focus {
+    outline: 1px solid var(--color-4);
+    background-color: var(--color-4);
+    color: var(--color-1);
+}
+
+.want-btn:hover {
+    background-color: var(--color-4);
+    color: var(--color-1);
+}
+
+.want-btn:active {
+    background-color: var(--color-6);
+    outline: 0;
+    color: var(--color-1);
+}
+
+.want-btn a:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.want-form-text {
+    padding: 0;
+    margin: 0 0 30px;
+}
+
+.want-btn-form {
+    display: flex;
+    justify-content: space-around;
+    max-width: 100%;
+    width: 100%;
+}
+
+/* ---------------------- footer ---------------------- */
+
+.footer {
+    width: 100%;
+    background-color: var(--color-14);
+}
+
+.footer-container {
+    margin: 0 auto;
+    padding: 0;
+    max-width: 100%;
+}
+
+.footer-copyright {
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+}
+
+.copyright {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15px;
+    color: var(--color-5);
+}
+
+.russian-copyright {
+    color: var(--color-2);
+}
+
+
+/* ----------------------  410px ---------------------- */
+
+@media (max-width: 410px) {
+    .header__menu_arrow-now {
+        display: flex;
+    }
+
+    .header__menu-text {
+        display: none;
+    }
+
+    .want-btn {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    .want-btn-form {
+        flex-direction: column;
+    }
+}
+
+
+/* ----------------------  326px ---------------------- */
+
+@media (max-width: 326px) {
+    .header__logo-company {
+        font-weight: 350;
+    }
+}
+
